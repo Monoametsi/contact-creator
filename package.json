@@ -2,11 +2,21 @@
   "name": "contact-creator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node Server/server.js",
+    "dev": "nodemon Server/server.js"
   },
   "keywords": [],
   "author": "Monoametsi Junior Mosemeng <216026633@student.uj.ac.za> (https://glacial-atoll-14823.herokuapp.com/)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
