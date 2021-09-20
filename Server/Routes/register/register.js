@@ -16,7 +16,8 @@ const register_get = (req, res) => {
 const register_post = async (req, res) => {
 	const formData = req.body;
 	const { email, pwd } = formData;
-	let userExists = false;
+	let exists = false;
+	
 	let findEmail = (mail) => {
 		return mail.Email === email;
 	}

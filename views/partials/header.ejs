@@ -17,11 +17,11 @@
 			</a>
 			
 			<div class="get-started-cont">
-			
+				<% if (req.url !== '/create-account') { %>
 				<div class="sign-up-cont">
 					<a href="/create-account">Get Started</a>
 				</div>
-				
+				<% } %>
 				<div class="login-cont">
 					<a href="/login">Login</a>
 				</div>
