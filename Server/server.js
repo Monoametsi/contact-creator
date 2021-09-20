@@ -5,16 +5,18 @@ const path = require('path');
 const mongoose = require('mongoose');
 const dirname = __dirname.slice(0, __dirname.search(/Server/i) - 1);
 const dotenv = require('dotenv');
+dotenv.config({path: path.join(__dirname,'.env')});
 const create_account = require('./Routes/register/register.js');
-const { register } = create_account;
-
+const users_DB = require('./Model/Users/users.js');
+const { register_get, register_post } = create_account;
+const bodyParser = require('body-parser');
+const DATABASE_URL = process.env.DATABASE; 
 app.disable('etag');
 
 app.use(express.static(path.join(dirname)));
-dotenv.config({path: path.join(__dirname,'.env')});
+app.use(bodyParser.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
-
-app.get('*', (req, res, next) => {
+app.use('*', (req, res, next) => {
 	res.locals.req = req;
 	next();
 });
@@ -23,10 +25,16 @@ app.get('/', (req, res) => {
 	res.render('index');
 });
 
-app.get('/create-account', register);
+app.get('/create-account', register_get);
+
+app.post('/create-account', register_post);
 
 const PORT = process.env.PORT || 8800;
 
-app.listen(PORT, () => {
-	console.log(`We Live at ${ PORT }`);
+mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+	app.listen(PORT, () => {
+		console.log(`We Live at ${ PORT }`);
+	});
+}).catch((err) => {
+	console.log(err);
 })

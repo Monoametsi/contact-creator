@@ -11,26 +11,75 @@
 			<div class="register-box-cont">
 				<div class="register-box">
 					
+					<% if (exists) { %>
+						<div class="user-exists-cont" style="display: flex;">
+							<div class="user-exists">
+								<span> An account with this email address has already been registered. 
+									Please <a href="/login"> Login </a>
+							   </span>
+							</div>
+						</div>
+					<% } %>
+					
 					<div class="register-box-title">
 						<h1>Sign Up</h1>
 					</div>
 					
 					<form method="POST" action="/create-account" class="register-form">
-						
+					<% if(email === undefined) { %>
 						<div class="inputField-cont">
-							<input type="email" placeholder="Email" class="inputField" id="email">
+							<input type="email" placeholder="Email" class="inputField" id="email" name="email">
 							<span class="err-msg"></span>
 						</div>
-						
+					<% } %>
+					
+					
+					<% if((email !== undefined && email === "") || (email !== undefined && email.length === 0) || (email !== undefined && email === null)) { %>
 						<div class="inputField-cont">
-							<input type="password" placeholder="Password-Should have more than 6 characters" class="inputField" id="pwd">
+							<input type="email" placeholder="Email" class="inputField redBox" id="email" name="email">
+							<span class="err-msg" style="display: flex;">Required</span>
+						</div>
+					<% }else if(email !== undefined && !email_regEx(email)) { %>
+						<div class="inputField-cont">
+							<input type="email" placeholder="Email" class="inputField redBox" id="email" name="email" value="<%= email %>">
+							<span class="err-msg" style="display: flex;">Invalid</span>
+						</div>
+					<% }else if(email !== undefined) { %>
+						<div class="inputField-cont">
+							<input type="email" placeholder="Email" class="inputField" id="email" name="email"  value="<%= email %>">
 							<span class="err-msg"></span>
 						</div>
-						
+					<% } %>
+					
+					<% if(pwd === undefined) { %>	
+						<div class="inputField-cont">
+							<input type="password" placeholder="Password-Should have more than 6 characters" class="inputField" id="pwd" name="pwd">
+							<span class="err-msg"></span>
+						</div>
+					<% } %>	
+					
+					
+					<% if((pwd !== undefined && pwd === "") || (pwd !== undefined && pwd === null) || (pwd !== undefined && pwd.length === 0)) { %>	
+						<div class="inputField-cont">
+							<input type="password" placeholder="Password-Should have more than 6 characters" class="inputField redBox" id="pwd" name="pwd">
+							<span class="err-msg" style="display: flex;">Required</span>
+						</div>
+					<% } else if (pwd !== undefined && (pwd.length > 0 && pwd.length < 6)) { %>
+						<div class="inputField-cont">
+							<input type="password" placeholder="Password-Should have more than 6 characters" class="inputField redBox" id="pwd" name="pwd" value="<%= pwd %>">
+							<span class="err-msg" style="display: flex;">Password should atleast be 6 characters long</span>
+						</div>
+					<% }else if(pwd !== undefined){ %>
+						<div class="inputField-cont">
+							<input type="password" placeholder="Password-Should have more than 6 characters" class="inputField" id="pwd" name="pwd" value="<%= pwd %>">
+							<span class="err-msg"></span>
+						</div>
+					<% } %>
+					
+					
 						<div class="sub-btn-cont">
 							<input type="submit" value="Submit" class="sub-btn" id="sub-btn">
 						</div>
-						
 					</form>
 				</div>
 			</div>
