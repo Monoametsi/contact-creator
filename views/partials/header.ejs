@@ -22,10 +22,14 @@
 					<a href="/create-account">Get Started</a>
 				</div>
 				<% } %>
+				
+				<% if (req.url === '/login' || req.url === '/login/') { %>
+				
+				<% }else{  %>
 				<div class="login-cont">
 					<a href="/login">Login</a>
 				</div>
-			
+				<% }  %>
 			</div>
 		
 		</div>

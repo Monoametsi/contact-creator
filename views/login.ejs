@@ -11,11 +11,21 @@
 			<div class="register-box-cont">
 				<div class="register-box">
 					
+					
+						<div class="user-exists-cont">
+							<div class="user-exists">
+								<span> 
+									Invalid login attempt
+							   </span>
+							</div>
+						</div>
+					
+					
 					<div class="register-box-title">
-						<h1>Sign Up</h1>
+						<h1>Login</h1>
 					</div>
 					
-					<form method="POST" action="/create-account" class="register-form">
+					<form method="POST" action="/login" class="register-form">
 
 						<div class="inputField-cont">
 							<input type="email" placeholder="Email" class="inputField" id="email" name="email">
@@ -23,11 +33,11 @@
 						</div>
 					
 						<div class="inputField-cont">
-							<input type="password" placeholder="Password-Should have more than 6 characters" class="inputField" id="pwd" name="pwd">
+							<input type="password" placeholder="Password" class="inputField" id="pwd" name="pwd">
 							<span class="err-msg"></span>
 						</div>
 						<div class="sub-btn-cont">
-							<input type="submit" value="Submit" class="sub-btn" id="sub-btn">
+							<input type="submit" value="Log in" class="sub-btn" id="sub-btn">
 						</div>
 					</form>
 				</div>

@@ -7,17 +7,19 @@
 <% if(req.url === "/") { %>
 	<link rel="stylesheet" href="/CSS/index.css">
 	<link rel="stylesheet" href="/CSS/index-mobile.css">
-<% }else if(req.url === "/create-account") { %>
-	<link rel="stylesheet" href="/register/CSS/register.css">
-	<link rel="stylesheet" href="/register/CSS/register-mobile.css">
+<% }else if(req.url === "/create-account" || req.url === "/login" || req.url === "/login/") { %>
+	<link rel="stylesheet" href="/CSS/register.css">
+	<link rel="stylesheet" href="/CSS/register-mobile.css">
 <% } %>
 <link rel="stylesheet" href="/header/CSS/header.css">
 <link rel="stylesheet" href="/header/CSS/header-mobile.css">
 <link rel="stylesheet" href="/footer/CSS/footer.css">
 <link rel="stylesheet" href="/footer/CSS/footer-mobile.css">
-<% if (req.url === "/") {%>
+<% if (req.url === "/") { %>
 	<title> Home | Contact-Manager </title>
 <% }else if(req.url === "/create-account") { %>
 	<title>Create account | Contact-Manager</title>
+<% } else if(req.url === "/login" || req.url === "/login/") { %>
+	<title>Log in | Contact-Manager</title>
 <% } %>
 </head>

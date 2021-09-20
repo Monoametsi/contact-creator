@@ -19,5 +19,7 @@
 <script src="/JS/index.js"></script>
 
 <% if(req.url === '/create-account') { %>
-	<script src="/register/JS/form-val.js"></script>
+	<script src="/JS/form-val.js"></script>
+<% }else if(req.url === '/login' || req.url === '/login/') { %>
+	<script src="/JS/authentication.js"></script>
 <% } %>
