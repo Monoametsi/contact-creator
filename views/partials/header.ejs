@@ -18,7 +18,7 @@
 			
 			<div class="get-started-cont">
 				
-				
+				<% if(req.url.search("/dashboard") !== -1) { %>
 				<div class="dashboard-dropdown-cont">
 					<div class="dashboard-dropdown-btn-cont" id="dashboard-dropdown-btn">
 						<h4>My Contact Book</h4>
@@ -36,7 +36,7 @@
 						</ul>
 					</div>
 				</div>
-				
+				<% } %>
 				
 				<% if (req.url !== '/create-account' && req.url.search("/dashboard") === -1) { %>
 				<div class="sign-up-cont">

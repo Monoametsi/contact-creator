@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<%- include("partials/head-info"); -%>
+<body>
+
+	<%- include("partials/header"); -%>
+	
+	<section id="register">
+		
+		<div class="register-cont">
+			<div class="register-box-cont">
+				<div class="register-box">
+					
+					<div class="register-box-title">
+						<h1>Create Contact</h1>
+					</div>
+					
+					<form method="POST" action="/add" class="register-form">
+						<div class="inputField-cont">
+							<input type="text" placeholder="Name" class="inputField" id="name" name="name">
+							<span class="err-msg"></span>
+						</div>
+						
+						<div class="inputField-cont">
+							<input type="text" placeholder="Surname" class="inputField" id="name" name="surname">
+							<span class="err-msg"></span>
+						</div>
+						
+						<div class="inputField-cont">
+							<input type="text" placeholder="Username" class="inputField" id="username" name="username">
+							<span class="err-msg"></span>
+						</div>
+
+						<div class="inputField-cont">
+							<input type="password" placeholder="Password" class="inputField" id="pwd" name="pwd">
+							<span class="err-msg"></span>
+						</div>
+						
+						<div class="register-box-title">
+							<h1>Contact information</h1>
+						</div>
+						
+						<div class="inputField-cont">
+							<input type="email" placeholder="Email" class="inputField" id="email" name="email">
+							<span class="err-msg"></span>
+						</div>
+						
+						<div class="inputField-cont">
+							<input type="tel" placeholder="Home Number" class="inputField" id="home-num" name="home_number">
+							<span class="err-msg"></span>
+						</div>
+
+						<div class="inputField-cont">
+							<input type="tel" placeholder="Cell Number" class="inputField" id="cell-num" name="cell_number">
+							<span class="err-msg"></span>
+						</div>
+						
+						<div class="register-box-title">
+							<h1>Notes</h1>
+						</div>
+						
+						<div class="inputField-cont">
+							<input type="text" placeholder="Note Title" class="inputField" id="note-title" name="note_title">
+							<span class="err-msg"></span>
+						</div>
+						
+						<div class="inputField-cont">
+							<textarea placeholder="Note Description" class="inputField" id="home-num" name="home_number"></textarea>
+							<span class="err-msg"></span>
+						</div>
+
+						<div class="inputField-cont">
+							<input type="date" placeholder="Note date" class="inputField" id="note-date" name="note_date">
+							<span class="err-msg"></span>
+						</div>
+					
+						<div class="sub-btn-cont">
+							<input type="submit" value="Save" class="sub-btn" id="sub-btn">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	
+	<%- include("partials/footer") -%>
+</body>
+</html>

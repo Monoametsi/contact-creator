@@ -17,11 +17,18 @@ const listDropper = (string) => {
 	if(dropdownBtn !== null){
 		dropdownBtn.onclick = function(){
 			const dropDownList = this.nextElementSibling;
+			const siblingSibling = dropDownList.nextElementSibling;
 			
 			if(window.getComputedStyle(dropDownList, null).display !== 'none'){
 				dropDownList.style.display = 'none';
+				if(siblingSibling !== null){
+					siblingSibling.style.display = 'none';
+				}
 			}else{
 				dropDownList.style.display = 'flex';
+				/* if(siblingSibling !== null){
+					siblingSibling.style.display = 'flex';
+				} */
 			}
 		}
 	}

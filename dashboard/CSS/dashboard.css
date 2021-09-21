@@ -193,7 +193,7 @@
 	/* background-color: red; */
 }
 
-.filter-cont, .filter-list, .advanced-search-cont{
+.filter-cont, .filter-list, .advanced-search-cont, .contacts-table-cont{
 	display: flex;
 	flex-direction: column;
 }
@@ -262,4 +262,236 @@
 .filter-list li:hover{
 	color: #fff;
 	background-color: #BE6526;
+}
+
+.contacts-cont{
+	display: flex;
+	margin-top: 5rem;
+	padding: 1rem 1.5rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.contacts-table-cont{
+	width: 100%;
+}
+
+.header-cont{
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.myMessage-header{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px 5px 0 0;
+	padding: 8px;
+	height: 3.1rem;
+	margin-left: 11px;
+	background-color: #636d74;
+}
+
+.deleteAll-cont{
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 2.3rem;
+	background-color: red;
+	border-radius: 5px;
+	color: #fff;
+	padding: 0 8px;
+	cursor: pointer;
+	transition: 0.3s;
+	border: none;
+	outline: none;
+	margin-right: 10px;
+	margin-bottom: 8px;
+	user-select: none;
+}
+
+.myMessage-header h1, .myMessage-header span, .deleteAll-cont h1{
+	font-family: montserrat, sans-serif;
+}
+
+.myMessage-header h1, .deleteAll-cont h1{
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.deleteAll-cont h1{
+	padding-left: 4px;
+}
+
+.myMessage-header span{
+	font-weight: bold;
+	font-size: 0.8rem;
+	margin-left: 8px;
+	padding: 0 4px;
+}
+
+table{
+	width: 100%;
+}
+
+table, tr, th{
+	border: 1px solid #636d74;
+	border-collapse: collapse;
+}
+
+tr:last-child td{
+	border: 0 solid #fff;
+}
+
+th{
+	font-family: montserrat, sans-serif;
+	background-color: #636d74;
+}
+
+td{
+	padding: 8px;
+	background-color: #fff;
+	text-align: center;
+	transition: 0.3s;
+	color: #000;
+}
+
+.text{
+	line-height: 1.5rem;
+}
+
+tr td{
+	cursor: pointer;
+}
+
+tr:hover td{
+	color: #fff;
+	background-color: #636d74
+}
+
+tr:hover td a i{
+	color: #fff;
+	/* background-color: #636d74 */
+}
+
+th .checkbox{
+	margin-left: 0.9rem;
+	text-align: center;
+}
+
+.checkbox{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	-webkit-appearance: none;
+	border: 2px solid #aaa;
+	outline: none;
+	border-radius: 3px;
+	padding: 14px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.checkbox:checked{
+	border: 2px solid #0CFC00;
+	background-color: #0CFC00;
+}
+
+.checkbox:checked:after{
+	content: "";
+	top: 5px;
+	border-color: #fff;
+	border-style: solid;
+	border-width: 0 3px 3px 0;
+	transform: rotate(45deg);
+	width: 5.5px;
+	height: 14px;
+	color: #fff;
+	font-size: 1.3rem;
+	font-weight: bold;
+	position: absolute;
+}
+
+th .checkbox{
+	text-align: center;
+	padding: 11px;
+}
+
+th .checkbox:checked:after{
+	top: 2px;
+	width: 4.5px;
+	height: 12px;
+}
+
+.fa-pencil{
+	transition: 0.3s;
+	color: #007cc2;
+}
+
+.content-title-cont{
+	display: inline-flex;
+	position: relative;
+}
+
+td .fa-trash{
+	border-radius: 3px;
+	padding: 6px 8px;
+	background-color: red;
+	cursor: pointer;
+	color: #fff;
+	font-size: 1rem;
+	transition: 0.3s;
+}
+
+td .fa-trash:focus{
+	box-shadow: inset 0 10px 14px rgb(0 0 0 / 45%);
+}
+
+.content-title-cont > .content-title, .deleteAll-cont > .content-title{
+	display: flex;
+	top: -2.2rem;
+	right: -8px;
+	font-size: 12px;
+	padding: 6px 8px;
+	opacity: 0;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	white-space: nowrap;
+	background-color: rgba(0,0,0,0.8);
+	color: #fff;
+	border-radius: 5px;
+	z-index: 1;
+	transition: 0.3s;
+	user-select: none;
+}
+
+.deleteAll-cont > .content-title{
+	/* display: none; */
+	font-size: 15px;
+	top: -2.4rem;
+	right: 18.5px;
+	cursor: default;
+	user-select: none;
+}
+
+.content-title-cont > .content-title:after, .deleteAll-cont > .content-title:after{
+	content:"";
+	top: 100%;
+	left: 45%;
+	border-width: 5px;
+	border-style: solid;
+	position: absolute;
+	border-color: rgba(0,0,0,0.8) transparent transparent transparent;
+}
+
+td .fa-trash:hover + .content-title, .deleteAll-cont:hover .content-title{
+	opacity: 1;
+}
+
+.deleteAll-cont .content-title:hover{
+	opacity: 0;
 }

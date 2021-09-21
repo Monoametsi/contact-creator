@@ -1,0 +1,157 @@
+#register{
+	margin-top: 6rem;
+	margin-bottom: 10rem;
+}
+
+.register-cont{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem; 
+}
+
+.register-box-cont{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 800px;
+	/* background-color: red; */
+}
+
+.register-box{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	max-width: 600px;
+}
+
+.user-exists-cont{
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.user-exists{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: red;
+	border-radius: 5px;
+	padding: 8px 12px;
+}
+
+.user-exists span{
+	text-align: center;
+	color: #fff;
+	font-size: 1.2rem;
+}
+
+.user-exists span a{
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px solid #BE6526;
+	transition: 0.3s;
+}
+
+.user-exists span a:hover{
+	color: #BE6526;
+}
+
+.register-box-title h1{
+	font-size: 2.5rem;
+	color: #000;
+	font-family: montserrat, sans-serif;
+}
+
+.register-form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	max-width: 100%;
+}
+
+.register-form > .register-box-title{
+	display: flex;
+	font-size: 1.5rem;
+	justify-content: center;
+}
+
+.register-form > .register-box-title h1{
+	font-size: 2rem;
+	margin: 0;
+}
+
+.inputField-cont{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.5rem;
+	/* background-color: red; */
+}
+
+.inputField{
+	order: 2; 
+	width: 100%;
+	padding: 8px;
+	margin: 5px;
+	font-size: 1rem;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	border: 1px solid #636d74;
+	font-family: "Poppins", sans-serif;
+	transition: 0.3s;
+}
+
+.inputField:focus{
+	border: 1px solid #BE6526;
+	box-shadow: 0 0 2px #BE6526;
+}
+
+.err-msg{
+	order: 1; 
+	display: flex;
+	color: red;
+	font-size: 1rem;
+	margin-left: 5px;
+}
+
+.redBox{
+	border: 1px solid red;
+}
+
+.redBox:focus{
+	border: 1px solid red;
+	box-shadow: 0 0 2px red;
+}
+
+.sub-btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 5px;
+	border: none;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	width: 100%;
+	font-size: 1.2rem;
+	font-weight: bold;
+	cursor: pointer;
+	color: #fff;
+	padding: 6px 8px;
+	font-family: "Poppins", sans-serif;
+	background-color: #BE6526;
+	transition: 0.3s;
+}
+
+.sub-btn:hover{
+	color: #BE6526;
+	border: 1px solid #BE6526;
+	box-shadow: 0 0 2px #BE6526;
+	background-color: transparent;
+}
