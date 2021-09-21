@@ -1,0 +1,265 @@
+#dashboard-cont{
+	margin-top: 12rem;
+}
+
+.dashboard-cont{
+	display: flex;
+	padding: 1rem 1.5rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.dashboard{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 1170px;
+}
+
+.search-info-cont{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search-engine-cont{
+	display: flex;
+	width: 50%;
+}
+
+.search-btn{
+	position: absolute;
+	display: flex;
+	align-self: center;
+	background-color: transparent;
+	border: none;
+	border-radius: 20px;
+	padding: 10px 12px;
+	cursor: pointer;
+	transition: 0.3s;
+	z-index: 1;
+	order: 1;
+}
+
+.search-icon, .filter i, .advanced-search i{
+	transition: 0.3s;
+	color: #636d74;
+	font-size: 1rem;
+}
+
+.search-input{
+	order: 2;
+	width: 100%;
+	display: flex;
+	position: relative;
+	outline: none;
+	border: 1px solid transparent;
+	width: 100%;
+	font-size: 1rem;
+	font-family: "Poppins",sans-serif;
+	padding: 8px;
+	padding-left: 2.5rem;
+	border-radius: 20px;
+	background-color: #f2f2f2;
+	transition: 0.3s;
+}
+
+.inputField{
+	width: 100%;
+	outline: none;
+	border: 1px solid transparent;
+	width: 100%;
+	font-size: 1rem;
+	font-family: "Poppins",sans-serif;
+	padding: 8px;
+	border-radius: 20px;
+	background-color: #f2f2f2;
+	transition: 0.3s;
+}
+
+.search-input::placeholder, .inputField::placeholder{
+	color: #636d74;
+}
+
+.search-input:focus, .inputField:focus{
+	border: 1px solid #BE6526;
+	background-color: transparent;
+	box-shadow: 0 0 2px #BE6526;
+}
+
+.search-input:focus + .search-btn > .search-icon{
+	color: #BE6526;
+}
+
+.search-config-cont{
+	display: flex;
+	align-items: center;
+	margin-left: 1.5rem;
+}
+
+.add-contact-btn, .advanced-search-cont{
+	margin-right: 1.5rem;
+}
+
+.adv-search-form-cont{
+	position: absolute;
+	display: none;
+	justify-content: center;
+	width: 350px;
+	/* max-width: 100%; */
+	transform: translate(-10rem, 6.5rem);
+}
+
+.adv-search-form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+	width: 100%;
+	padding: 8px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.adv-search-form-fields{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
+
+.adv-search-title-cont h1{
+	font-size: 1.2rem;
+	color: #000;
+}
+
+.inputField-cont{
+	display: flex;
+	margin-bottom: 1.5rem;
+}
+
+.sub-btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	width: 100%;
+	font-size: 1.1rem;
+	font-weight: bold;
+	cursor: pointer;
+	color: #fff;
+	font-family: "Poppins", sans-serif;
+	background-color: #BE6526;
+	transition: 0.3s;
+}
+
+.sub-btn:hover{
+	color: #BE6526;
+	border: 1px solid #BE6526;
+	box-shadow: 0 0 2px #BE6526;
+	background-color: transparent;
+}
+
+.add-contact-btn a{
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	text-decoration: none;
+	font-size: 1rem;
+	color: #fff;
+	background-color: #BE6526;
+	border: 1px solid transparent;
+	user-select: none;
+	padding: 8px 12px;
+	transition: 0.3s
+}
+
+.add-contact-btn a:hover{
+	color: #BE6526;
+	border: 1px solid #BE6526;
+	background-color: transparent;
+	box-shadow: 0 0 2px #BE6526;
+}
+
+.filter{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* background-color: red; */
+}
+
+.filter-cont, .filter-list, .advanced-search-cont{
+	display: flex;
+	flex-direction: column;
+}
+
+.filter, .advanced-search{
+	cursor: pointer;
+}
+
+.filter i, .advanced-search i{
+	font-size: 2rem;
+}
+
+.filter i:hover,.advanced-search i:hover{
+	color: #BE6526;
+}
+
+.filter-cont, .advanced-search-cont{
+	position: relative;
+}
+
+.filter-list-cont{
+	position: absolute;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	transform: translateY(1rem);
+	z-index: 1;
+}
+
+.advanced-search-cont > .filter-list-cont{
+	transform: translate(-5rem, 2rem);
+}
+
+.filter-list{
+	width: 100%;
+	list-style: none;
+	padding: 0;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+.filter-list li{
+	cursor: pointer;
+	display: flex;
+	padding: 8px;
+	color: #636d74;
+	user-select: none;
+	transition: 0.3s;
+}
+
+.filter-list li:first-child{
+	border-radius: 5px 5px 0 0;
+}
+
+.filter-list li:last-child{
+	border-radius: 0 0 5px 5px;
+}
+
+.advanced-search-cont > .filter-list-cont li{
+	border-radius: 5px;
+	justify-content: center;
+}
+
+.filter-list li:hover{
+	color: #fff;
+	background-color: #BE6526;
+}

@@ -22,4 +22,6 @@
 	<script src="/JS/form-val.js"></script>
 <% }else if(req.url === '/login' || req.url === '/login/') { %>
 	<script src="/JS/authentication.js"></script>
+<% } else if(req.url.search("/dashboard") !== -1) { %>
+	<script src="/JS/dashboard.js"></script>
 <% } %>

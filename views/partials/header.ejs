@@ -17,19 +17,41 @@
 			</a>
 			
 			<div class="get-started-cont">
-				<% if (req.url !== '/create-account') { %>
+				
+				
+				<div class="dashboard-dropdown-cont">
+					<div class="dashboard-dropdown-btn-cont" id="dashboard-dropdown-btn">
+						<h4>My Contact Book</h4>
+					</div>
+					
+					<div class="dashboard-dropdown">
+						<ul class="dropdown-list">
+							<li>
+								<a href="/dashboard">Dashboard</a>
+							</li>
+							
+							<li>
+								<a href="/log-out">Log out</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+				
+				<% if (req.url !== '/create-account' && req.url.search("/dashboard") === -1) { %>
 				<div class="sign-up-cont">
 					<a href="/create-account">Get Started</a>
 				</div>
 				<% } %>
 				
-				<% if (req.url === '/login' || req.url === '/login/') { %>
+				<% if (req.url === '/login' || req.url === '/login/' || req.url.search("/dashboard") !== -1) { %>
 				
 				<% }else{  %>
 				<div class="login-cont">
 					<a href="/login">Login</a>
 				</div>
 				<% }  %>
+				
 			</div>
 		
 		</div>

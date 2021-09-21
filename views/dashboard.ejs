@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<%- include("partials/head-info"); -%>
+<body>
+	<%- include("partials/header"); -%>
+	
+	<section id="dashboard-cont">
+		<div class="dashboard-cont">
+			<div class="dashboard">
+				<div class="search-info-cont">
+					<div class="search-engine-cont">
+					
+						<input type="search" placeholder="Search contacts" class="search-input" id="search-input">
+						
+						<button class="search-btn" id="search-btn">
+							<i class="fa fa-search search-icon"></i>
+						</button>
+						
+						
+					</div>
+					
+					<div class="search-config-cont">
+						
+						<div class="advanced-search-cont">
+							<div class="advanced-search" id="advanced-search">
+								<i class="fa fa-cog"></i>
+							</div>
+							
+							<div class="filter-list-cont" id="filter-list-cont">
+								<ul class="filter-list">
+									<li id="advanced-search-link">Advance Search</li>
+								</ul>
+							</div>
+							
+							<div class="adv-search-form-cont"> 
+								<div class="adv-search-form">
+									<div class="adv-search-title-cont">
+										<h1>Advanced Search</h1>
+									</div>
+									
+									<form method="GET" id="adv-search-form" class="adv-search-form-fields">
+										<div class="inputField-cont">
+											<input type="text" placeholder="First Name" id="first-name" class="inputField">
+										</div>
+										
+										<div class="inputField-cont">
+											<input type="text" placeholder="Surname" id="surname-name" class="inputField">
+										</div>
+										
+										<div class="inputField-cont">
+											<input type="email" placeholder="Email" id="email" class="inputField">
+										</div>
+										
+										<div class="inputField-cont">
+											<input type="tel" placeholder="Cell Number" id="tel" class="inputField">
+										</div>
+										
+										<div class="inputField-cont">
+											<input type="text" placeholder="Note title" id="note-title" class="inputField">
+										</div>
+										
+										<div class="inputField-cont">
+											<input type="text" placeholder="Note Description" id="note-description" class="inputField">
+										</div>
+										
+										<input type="submit" value="Search" class="sub-btn" id="sub-btn">
+									</form>
+								</div>
+							</div>
+						</div>
+						
+						<div class="add-contact-btn">
+							<a href="/dashboard/add">Create Contact</a>
+						</div>
+						
+						<div class="filter-cont">
+							<div class="filter" id="filter-dropdown">
+								<i class="fa fa-ellipsis-v"></i>
+							</div>
+							
+							<div class="filter-list-cont">
+								<ul class="filter-list">
+									<li>Only Show Names</li>
+									<li>Only Show Surnames</li>
+									<li>Only Show emails</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- <div class="">
+					
+				</div> -->
+			</div>
+		</div>
+	</section>
+	
+	<script src="/JS/index.js"></script>
+	<script src="/JS/dashboard.js"></script>
+</body>
+</html>

@@ -10,6 +10,9 @@
 <% }else if(req.url === "/create-account" || req.url === "/login" || req.url === "/login/") { %>
 	<link rel="stylesheet" href="/CSS/register.css">
 	<link rel="stylesheet" href="/CSS/register-mobile.css">
+<% } else if(req.url.search("/dashboard") !== -1) { %>
+	<link rel="stylesheet" href="/CSS/dashboard.css">
+	<link rel="stylesheet" href="/CSS/dashboard-mobile.css">
 <% } %>
 <link rel="stylesheet" href="/header/CSS/header.css">
 <link rel="stylesheet" href="/header/CSS/header-mobile.css">
@@ -21,5 +24,7 @@
 	<title>Create account | Contact-Manager</title>
 <% } else if(req.url === "/login" || req.url === "/login/") { %>
 	<title>Log in | Contact-Manager</title>
+<% } else if(req.url.search("/dashboard") !== -1) { %>
+	<title> Dashboard | Contact-Manager </title>
 <% } %>
 </head>
