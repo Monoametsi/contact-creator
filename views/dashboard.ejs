@@ -4,6 +4,107 @@
 <body>
 	<%- include("partials/header"); -%>
 	
+	<% const display_contacts_table = (contactInfo) => { %>
+		
+		<% const { contactId, name, surname, username, pwd, email, home_number, cell_number, note_title, note_description, note_date } = contactInfo %>
+		<tr id="<%= contactId %>">
+
+			<td>
+				<input type="checkbox" class="checkbox sub-checkBox">
+			</td>
+			
+			<td>
+				<a href="<%=` /edit/${ contactId.trim() } `%>"><i class="fa fa-pencil"></i><a/>
+			</td>
+
+			<td class="text">
+
+				<%= name %>
+
+			</td>
+			
+			<td class="text">
+				<%= surname %>
+			</td>
+			
+			<td class="text">
+				<%= username %>
+			</td>
+			
+			<td class="text">
+				<%= email %>
+			</td>
+			
+			<td class="text">
+				<%= note_title %>
+			</td>
+
+			<td>
+				<div class="content-title-cont">
+					<i class="fa fa-trash" tabindex="1"></i>
+					<div class="content-title">Delete</div>
+				</div>
+			</td>
+
+		</tr>
+		
+	<% } %>
+	
+	<% const display_contacts_slide = (contactInfo) => { %>
+	
+		<% const { contactId, name, surname, username, pwd, email, home_number, cell_number, note_title, note_description, note_date } = contactInfo %>
+		<div class="post-info-cont">
+		
+			<div class="slide-closer" tabindex="1"> 
+				<i class="fa fa-times"></i> <span> Close</span>
+			</div>
+			
+			<div class="post-info">
+				<div class="buyersMessage-cont">
+
+					<div class="buyersMessage-title">
+						<h4>Contact</h4>
+					</div>
+
+					<div class="info-message-cont">
+					  <div class="buyers-info">
+							<div> <i class="fa fa-user"></i> <span> <%= `${name} ${surname}` %> </span> </div>
+							<div> <i class="fa fa-user"></i> <span> <%= `Username - ${username}` %> </span> </div>
+							<div> <i class="fa fa-phone"></i> <span> <%= `Home number - ${home_number}` %></span> </div>
+							<div> <i class="fa fa-phone"></i> <span> <%= `Cell number - ${cell_number}` %></span> </div>
+							<div> <i class="fa fa-envelope"></i> <span> <%= `${email}` %>  </span> </div>
+					  </div>
+					</div>
+
+				</div>
+				
+				<div class="post-card">
+
+					<div class="post-details">
+
+						<div class="post-title-cont">
+							 <h4 class="post-title" id="<%= contactId %>"> Notes </h4>
+						</div>
+
+						<div class="post-descript">
+							<span><%= `${note_title}` %></span>
+							<p> <%= note_description %></p>
+						</div>
+
+						<div class="post-date-cont">
+							<div class="post-date">
+								Note Date: <span><%= note_date %></span>
+							</div>
+							
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	<% } %>
+	
 	<section id="dashboard-cont">
 		<div class="dashboard-cont">
 			<div class="dashboard">
@@ -94,7 +195,7 @@
 						<div class="header-cont">
 							<div class="myMessage-header">
 								<h1>Messages</h1>
-								<span>7</span>
+								<span><%= Contacts.length %></span>
 							</div>
 
 							<button class="deleteAll-cont" id="deleteAll-cont">
@@ -139,94 +240,20 @@
 								</th>
 							</tr>
 							
-							
-							<tr id="0592b5db-de25-4775-85d8-ea3e16047105">
-
-									<td>
-										<input type="checkbox" class="checkbox sub-checkBox">
-									</td>
-
-									<td>
-										<a href="/edit"><i class="fa fa-pencil"></i><a/>
-									</td>
-
-									<td class="text">
-
-										Tax textbook
-
-									</td>
-									
-									<td class="text">
-										Mickey
-									</td>
-									
-									<td class="text">
-										inherejump@gmail.com
-									</td>
-									
-									<td class="text">
-										inherejump@gmail.com
-									</td>
-									
-									<td class="text">
-										22 July 17:13
-									</td>
-
-									<td>
-										<div class="content-title-cont">
-											<i class="fa fa-trash" tabindex="1"></i>
-											<div class="content-title">Delete</div>
-										</div>
-									</td>
-
-								</tr>
+							<% Contacts.map(display_contacts_table) %>
 								
-								<tr id="0592b5db-de25-4775-85d8-ea3e16047105">
-
-									<td>
-										<input type="checkbox" class="checkbox sub-checkBox">
-									</td>
-
-									<td>
-										<a href="/edit"><i class="fa fa-pencil"></i><a/>
-									</td>
-
-									<td class="text">
-
-										Tax textbook
-
-									</td>
-									
-									<td class="text">
-										Mickey
-									</td>
-									
-									<td class="text">
-										inherejump@gmail.com
-									</td>
-									
-									<td class="text">
-										inherejump@gmail.com
-									</td>
-									
-									<td class="text">
-										22 July 17:13
-									</td>
-
-									<td>
-										<div class="content-title-cont">
-											<i class="fa fa-trash" tabindex="1"></i>
-											<div class="content-title">Delete</div>
-										</div>
-									</td>
-
-								</tr>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	
+	<% if(Contacts.length > 0) { %>
+	<div class="MessageDetailsInfo-cont" id="post-info-cont">
+		<% Contacts.map(display_contacts_slide) %>
+	</div>
+	<% } %>
 	
 	<script src="/JS/index.js"></script>
 	<script src="/JS/dashboard.js"></script>

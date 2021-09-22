@@ -108,6 +108,8 @@
 	width: 350px;
 	/* max-width: 100%; */
 	transform: translate(-10rem, 6.5rem);
+	padding-bottom: 3rem;
+	z-index: 10;
 }
 
 .adv-search-form{
@@ -221,7 +223,7 @@
 	justify-content: center;
 	width: 200px;
 	transform: translateY(1rem);
-	z-index: 1;
+	z-index: 10;
 }
 
 .advanced-search-cont > .filter-list-cont{
@@ -494,4 +496,264 @@ td .fa-trash:hover + .content-title, .deleteAll-cont:hover .content-title{
 
 .deleteAll-cont .content-title:hover{
 	opacity: 0;
+}
+
+.smooth-in{
+	animation-name: smooth-in;
+	animation-duration: 0.3s;
+}
+
+@keyframes smooth-in{
+	from{ opacity: 0; }
+	to{ opacity: 1; }
+}
+
+.smooth-out{
+	animation-name: smooth-out;
+	animation-duration: 0.3s;
+}
+
+@keyframes smooth-out{
+	from{ opacity: 1; }
+	to{ opacity: 0; }
+}
+
+.MessageDetailsInfo-cont{
+	position: fixed;
+	z-index: 100;
+	height: 100%;
+    width: 0;
+	max-width: 100%;
+    top: 0;
+    right: 0;
+	transition: 0.3s;
+	background-color: #eee;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.post-info-cont{
+    display: none;
+	width: 100%;
+	position: relative;
+	margin-top: 9rem;
+}
+
+.post-info{
+	width: 100%;
+	align-self: center;
+	display: flex;
+    border-radius: 5px;
+    margin: 4rem 1rem;
+    padding: 0 1rem;
+    padding-right: 3rem;
+    background-color: #fff;
+    border: 1px solid #007cc2;
+    flex-direction: column;
+}
+
+.buyersMessage-cont{
+	display: flex;
+   	flex-direction: column;
+}
+
+.buyersMessage-cont:after{
+	content: "";
+    padding-top: 1rem;
+	border-bottom: 1px dashed #ddd;
+}
+
+.post-card, .info-message-cont{
+	display: flex;
+    justify-content: space-around;
+}
+
+.post-card{
+	width: 100%;
+	margin: 8px 0;
+}
+
+.buyersMessage-title{
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    font-family: montserrat, sans-serif;
+    font-size: 1.1rem;
+}
+
+.buyersMessage-title h4{
+	padding-left: 4px;
+	color: #636d74;
+}
+
+.buyersMessage-title i{
+	color: #000;
+}
+
+.buyers-info{
+	display: flex;
+	justify-content: center;
+    flex-wrap: wrap;
+}
+
+.buyers-info div{
+	color: #fff;
+	background-color: rgb(0, 160, 255);
+    font-weight: 400;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 2px 7px;
+    text-align: center;
+    min-width: 10px;
+    white-space: nowrap;
+    font-size: 14px;
+	overflow: hidden;
+}
+
+.buyers-message{
+	position: relative;
+	align-self: center;
+	width: 280px;
+	border-radius: 6px;
+	padding: 0 15px;
+	background-color: #eee;
+}
+
+.buyers-message:after{
+	content: ""; 
+	position: absolute;
+    bottom: 100%;
+    left: 10%;
+    border: 12px solid;
+    border-color: transparent transparent #eee transparent;
+}
+
+.buyers-message p{
+	font-size: 13px;
+	line-height: 1.6rem;
+	color: #636d74;
+}
+
+.img-cont{
+	display: flex;
+    border-radius: 5px;
+    background-color: #f6f6f6;
+    margin: 5px;
+    justify-content: center;
+	width: 150px;
+    padding: 4px;
+    border: 1px solid #ddd;
+    max-width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.img-cont:hover{
+	border: 1px solid #007cc2;
+}
+
+.img-cont > img{
+	border-radius: 5px;
+	width: 140px;
+    height: 140px;
+    max-width: 100%;
+}
+
+.post-details{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin-top: -1rem;
+}
+
+.post-title{
+	cursor: pointer;
+	color: #636d74;
+	font-family: montserrat, sans-serif;
+	transition: 0.3s;
+}
+
+.post-title:hover{
+	color: rgb(0, 160, 255);
+}
+
+.post-descript{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.post-descript, .post-date-cont{
+	font-size: 14px;
+	color: #636d74;
+}
+
+.post-descript p{
+	text-align: center;
+	line-height: 1.7rem;
+}
+
+.post-descript{
+	margin-top: -5px;
+}
+
+.post-descript span, .post-date span{
+	font-weight: 600;
+}
+
+.post-date-cont{
+	display: flex;
+}
+
+.post-date:first-child{
+	margin-right: 5px;
+}
+	
+.post-date{
+	background-color: #e0e0e0;
+    font-weight: 400;
+    border-radius: 10px;
+    margin-bottom: 3px;
+    padding: 2px 7px;
+    text-align: center;
+    min-width: 10px;
+    color: #666;
+    white-space: nowrap;
+	overflow: hidden;
+}
+
+.slide-closer{
+	display: flex;
+	position: absolute;
+	bottom: 88%;
+	right: 18px;
+	font-size: 1.3rem;
+	opacity: 0.4;
+	padding: 4px 8px;
+	transition: 0.3s;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	user-select: none;
+	background-color: #636d74;
+}
+
+.slide-closer:hover{
+	opacity: 0.6;
+	border: 1px solid rgba(0,0,0,0.2);
+}
+
+.slide-closer:focus{
+	box-shadow: inset 0 6px 8px rgb(0 0 0 / 20%);
+}
+
+.slide-closer span{
+	padding-left: 5px;
+}
+
+.fa-times{
+	align-self: center;
 }

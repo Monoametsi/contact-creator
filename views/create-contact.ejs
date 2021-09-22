@@ -11,6 +11,24 @@
 			<div class="register-box-cont">
 				<div class="register-box">
 					
+					<%if(empty_inputs) {%>
+					<div class="user-exists-cont" style="display: flex;">
+						<div class="user-exists">
+							<span> 
+								Atleast one field must be filled.
+						   </span>
+						</div>
+					</div>
+					<% }else{ %>
+					<div class="user-exists-cont">
+						<div class="user-exists">
+							<span> 
+								Atleast one field must be filled.
+						   </span>
+						</div>
+					</div>
+					<% } %>
+					
 					<div class="register-box-title">
 						<h1>Create Contact</h1>
 					</div>
@@ -22,7 +40,7 @@
 						</div>
 						
 						<div class="inputField-cont">
-							<input type="text" placeholder="Surname" class="inputField" id="name" name="surname">
+							<input type="text" placeholder="Surname" class="inputField" id="surname" name="surname">
 							<span class="err-msg"></span>
 						</div>
 						
@@ -65,15 +83,15 @@
 						</div>
 						
 						<div class="inputField-cont">
-							<textarea placeholder="Note Description" class="inputField" id="home-num" name="home_number"></textarea>
+							<textarea placeholder="Note Description" class="inputField" id="note-description" name="note_description"></textarea>
 							<span class="err-msg"></span>
 						</div>
-
+						
 						<div class="inputField-cont">
 							<input type="date" placeholder="Note date" class="inputField" id="note-date" name="note_date">
 							<span class="err-msg"></span>
 						</div>
-					
+						
 						<div class="sub-btn-cont">
 							<input type="submit" value="Save" class="sub-btn" id="sub-btn">
 						</div>

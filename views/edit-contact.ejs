@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<%- include("partials/head-info"); -%>
+<body>
+	
+	<%- include("partials/header"); -%>
+	
+	<section id="register">
+		<div class="register-cont">
+			<div class="register-box-cont">
+				<div class="register-box">
+					
+					<%if(empty_inputs) {%>
+					<div class="user-exists-cont" style="display: flex;">
+						<div class="user-exists">
+							<span> 
+								Atleast one field must be filled.
+						   </span>
+						</div>
+					</div>
+					<% }else{ %>
+					<div class="user-exists-cont">
+						<div class="user-exists">
+							<span> 
+								Atleast one field must be filled.
+						   </span>
+						</div>
+					</div>
+					<% } %>
+					
+					<div class="register-box-title">
+						<h1>Edit Contact</h1>
+					</div>
+					<% const { contactId, name, surname, username, pwd, email, home_number, cell_number, note_title, note_description, note_date } = contact %>
+					<form method="POST" action="<%= req.url %>" class="register-form">
+						
+						<% if(name.trim() === "" || name.trim().length === 0 || name === null) { %>
+						<div class="inputField-cont">
+							<input type="text" placeholder="Name" class="inputField" id="name" name="name">
+							<span class="err-msg"></span>
+						</div>
+						<% } else { %>
+						<div class="inputField-cont">
+							<input type="text" placeholder="Name" class="inputField" id="name" name="name" value="<%= name %>">
+							<span class="err-msg"></span>
+						</div>
+						<% } %>
+						
+						<% if(name.trim() === "" || name.trim().length === 0 || name === null) { %>
+						<div class="inputField-cont">
+							<input type="text" placeholder="Surname" class="inputField" id="surname" name="surname">
+							<span class="err-msg"></span>
+						</div>
+						<% }else { %>
+						<div class="inputField-cont">
+							<input type="text" placeholder="Surname" class="inputField" id="surname" name="surname" value="<%= surname %>">
+							<span class="err-msg"></span>
+						</div>
+						<% } %>
+						
+						<% if(name.trim() === "" || name.trim().length === 0 || name === null) { %>
+						<div class="inputField-cont">
+							<input type="text" placeholder="Username" class="inputField" id="username" name="username">
+							<span class="err-msg"></span>
+						</div>
+						<% } else { %>
+						<div class="inputField-cont">
+							<input type="text" placeholder="Username" class="inputField" id="username" name="username" value="<%= username %>">
+							<span class="err-msg"></span>
+						</div>
+						<% } %>
+						
+						<% if(name.trim() === "" || name.trim().length === 0 || name === null) { %>
+						<div class="inputField-cont">
+							<input type="password" placeholder="Password" class="inputField" id="pwd" name="pwd">
+							<span class="err-msg"></span>
+						</div>
+						<% } else { %>
+						<div class="inputField-cont">
+							<input type="password" placeholder="Password" class="inputField" id="pwd" name="pwd" value="<%= pwd %>">
+							<span class="err-msg"></span>
+						</div>
+						<% } %>
+						
+						<div class="register-box-title">
+							<h1>Contact information</h1>
+						</div>
+						
+						<% if(name.trim() === "" || name.trim().length === 0 || name === null) { %>
+						<div class="inputField-cont">
+							<input type="email" placeholder="Email" class="inputField" id="email" name="email">
+							<span class="err-msg"></span>
+						</div>
+						<% } else { %>
+						<div class="inputField-cont">
+							<input type="email" placeholder="Email" class="inputField" id="email" name="email" value="<%= email %>">
+							<span class="err-msg"></span>
+						</div>
+						<% } %>
+						
+						<% if(name.trim() === "" || name.trim().length === 0 || name === null) { %>
+						<div class="inputField-cont">
+							<input type="tel" placeholder="Home Number" class="inputField" id="home-num" name="home_number">
+							<span class="err-msg"></span>
+						</div>
+						<% } else { %>
+						<div class="inputField-cont">
+							<input type="tel" placeholder="Home Number" class="inputField" id="home-num" name="home_number" value="<%= home_number %>">
+							<span class="err-msg"></span>
+						</div>
+						<% } %>
+						
+						<% if(name.trim() === "" || name.trim().length === 0 || name === null) { %>
+						<div class="inputField-cont">
+							<input type="tel" placeholder="Cell Number" class="inputField" id="cell-num" name="cell_number">
+							<span class="err-msg"></span>
+						</div>
+						<% } else { %>
+						<div class="inputField-cont">
+							<input type="tel" placeholder="Cell Number" class="inputField" id="cell-num" name="cell_number" value="<%= cell_number %>">
+							<span class="err-msg"></span>
+						</div>
+						<% } %>
+						
+						<div class="register-box-title">
+							<h1>Notes</h1>
+						</div>
+						
+						<% if(name.trim() === "" || name.trim().length === 0 || name === null) { %>
+						<div class="inputField-cont">
+							<input type="text" placeholder="Note Title" class="inputField" id="note-title" name="note_title">
+							<span class="err-msg"></span>
+						</div>
+						<% } else { %>
+						<div class="inputField-cont">
+							<input type="text" placeholder="Note Title" class="inputField" id="note-title" name="note_title" value="<%= note_title %>">
+							<span class="err-msg"></span>
+						</div>
+						<% } %>
+						
+						<% if(name.trim() === "" || name.trim().length === 0 || name === null) { %>
+						<div class="inputField-cont">
+							<textarea placeholder="Note Description" class="inputField" id="note-description" name="note_description"></textarea>
+							<span class="err-msg"></span>
+						</div>
+						<% } else { %>
+						<div class="inputField-cont">
+							<textarea placeholder="Note Description" class="inputField" id="note-description" name="note_description"><%= note_description %></textarea>
+							<span class="err-msg"></span>
+						</div>
+						<% } %>
+						
+						<% if(name.trim() === "" || name.trim().length === 0 || name === null) { %>
+						<div class="inputField-cont">
+							<input type="date" placeholder="Note date" class="inputField" id="note-date" name="note_date">
+							<span class="err-msg"></span>
+						</div>
+						<% } else { %>
+						<div class="inputField-cont">
+							<input type="date" placeholder="Note date" class="inputField" id="note-date" name="note_date" value="<%= note_date %>">
+							<span class="err-msg"></span>
+						</div>
+						<% } %>
+						
+						<div class="sub-btn-cont">
+							<input type="submit" value="Save" class="sub-btn" id="sub-btn">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	
+	<%- include("partials/footer") -%>
+</body>
+</html>

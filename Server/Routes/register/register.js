@@ -1,7 +1,8 @@
 const emailValidation = require('./data-validation.js');
 const bcrypt = require('bcrypt');
-const users_DB = require('../../Model/Users/users.js');
 const uuid = require('uuid');
+const jwt = require('jsonwebtoken');
+const users_DB = require('../../Model/Users/users.js');
 const { users } = users_DB;
 const { email_validator, password_validator, email_regEx } = emailValidation;
 
@@ -11,6 +12,14 @@ const register_get = (req, res) => {
 		
 	}
 	return res.render('register', { email, pwd, email_regEx, exists });
+}
+
+const maxAge = 3 * 24 * 60 * 60;
+
+const createToken = (id) => {
+	return jwt.sign({ id }, process.env.ACCESS_TOKEN_SECRET, {
+		expiresIn: maxAge
+	})
 }
 
 const register_post = async (req, res) => {
@@ -41,7 +50,7 @@ const register_post = async (req, res) => {
 					Contacts: []
 				}
 				
-				const { _id,Email,Password,Contacts } = userInfo;
+				const { _id, Email, Password, Contacts } = userInfo;
 				
 				const Users = new users({
 					_id,
@@ -51,10 +60,14 @@ const register_post = async (req, res) => {
 				});
 				
 				await Users.save().then(() => {
-					res.send('/dashboard');
+					const token = createToken(_id);
+					res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+					res.redirect('/dashboard');
 				}).catch((err) => {
 					console.log(err);
 				});
+				
+				
 			}else{
 				exists = true;
 				return res.render('register', { email_regEx, email, pwd, exists }); 
@@ -68,5 +81,6 @@ const register_post = async (req, res) => {
 
 module.exports = {
 	register_get,
-	register_post
+	register_post,
+	createToken
 }

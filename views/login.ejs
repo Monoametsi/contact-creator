@@ -11,14 +11,15 @@
 			<div class="register-box-cont">
 				<div class="register-box">
 					
-					
-						<div class="user-exists-cont">
+						<%if(invalidLogin) {%>
+						<div class="user-exists-cont" style="display: flex;">
 							<div class="user-exists">
 								<span> 
 									Invalid login attempt
 							   </span>
 							</div>
 						</div>
+						<% } %>
 					
 					
 					<div class="register-box-title">
@@ -26,16 +27,48 @@
 					</div>
 					
 					<form method="POST" action="/login" class="register-form">
-
+						<% if (email === undefined) {%>
 						<div class="inputField-cont">
 							<input type="email" placeholder="Email" class="inputField" id="email" name="email">
 							<span class="err-msg"></span>
 						</div>
-					
+						<% } %>
+						
+						<% if ((email !== undefined && email.trim() === "") || (email !== undefined && email.trim().length === 0) || (email !== undefined && email === null)) {%>
+							<div class="inputField-cont">
+								<input type="email" placeholder="Email" class="inputField" id="email" name="email">
+								<span class="err-msg" style="display: flex;">Required</span>
+							</div>
+						<% }else{ %>
+							<% if (email !== undefined) { %>
+							<div class="inputField-cont">
+								<input type="email" placeholder="Email" class="inputField" id="email" name="email" value="<%= email %>">
+								<span class="err-msg"></span>
+							</div>
+							<% } %>
+						<% } %>
+						
+						<% if ((pwd !== undefined && pwd.trim() === "") || (pwd !== undefined && pwd.trim().length === 0) || (pwd !== undefined && pwd === null)) {%>
+						<div class="inputField-cont">
+							<input type="password" placeholder="Password" class="inputField" id="pwd" name="pwd">
+							<span class="err-msg" style="display: flex;">Required</span>
+						</div>
+						<% }else{ %>
+							<% if (pwd !== undefined){ %>
+							<div class="inputField-cont">
+								<input type="password" placeholder="Password" class="inputField" id="pwd" name="pwd" value="<%= pwd %>">
+								<span class="err-msg"></span>
+							</div>
+							<% } %>
+						<% } %>
+						
+						<% if (pwd === undefined){ %>
 						<div class="inputField-cont">
 							<input type="password" placeholder="Password" class="inputField" id="pwd" name="pwd">
 							<span class="err-msg"></span>
 						</div>
+						<% } %>
+						
 						<div class="sub-btn-cont">
 							<input type="submit" value="Log in" class="sub-btn" id="sub-btn">
 						</div>

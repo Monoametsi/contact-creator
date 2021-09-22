@@ -13,7 +13,7 @@
 <% } else if(req.url.search("/dashboard") !== -1) { %>
 	<link rel="stylesheet" href="/CSS/dashboard.css">
 	<link rel="stylesheet" href="/CSS/dashboard-mobile.css">
-<% } else if(req.url === "/add") { %>
+<% } else if(req.url === "/add" || req.url.search("/edit") !== -1) { %>
 	<link rel="stylesheet" href="/CSS/create-contact.css">
 	<link rel="stylesheet" href="/CSS/create-contact-mobile.css">
 <% } %>
