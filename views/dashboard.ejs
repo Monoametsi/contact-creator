@@ -31,11 +31,11 @@
 				<%= username %>
 			</td>
 			
-			<td class="text">
+			<td class="text" id="<%= cell_number %>">
 				<%= email %>
 			</td>
 			
-			<td class="text">
+			<td class="text" id="<%= note_description %>">
 				<%= note_title %>
 			</td>
 
@@ -51,10 +51,10 @@
 	<% } %>
 	
 	<% const display_contacts_slide = (contactInfo) => { %>
-	
+		
 		<% const { contactId, name, surname, username, pwd, email, home_number, cell_number, note_title, note_description, note_date } = contactInfo %>
 		<div class="post-info-cont">
-		
+			
 			<div class="slide-closer" tabindex="1"> 
 				<i class="fa fa-times"></i> <span> Close</span>
 			</div>
@@ -110,8 +110,8 @@
 			<div class="dashboard">
 				<div class="search-info-cont">
 					<div class="search-engine-cont">
-					
-						<input type="search" placeholder="Search contacts" class="search-input" id="search-input">
+						
+						<input type="search" placeholder="Search contacts by either name, surname or email" class="search-input" id="search-input">
 						
 						<button class="search-btn" id="search-btn">
 							<i class="fa fa-search search-icon"></i>
@@ -141,27 +141,27 @@
 									
 									<form method="GET" id="adv-search-form" class="adv-search-form-fields">
 										<div class="inputField-cont">
-											<input type="text" placeholder="First Name" id="first-name" class="inputField">
+											<input type="text" placeholder="First Name" id="first-name" class="inputField" name="First-Name">
 										</div>
 										
 										<div class="inputField-cont">
-											<input type="text" placeholder="Surname" id="surname-name" class="inputField">
+											<input type="text" placeholder="Surname" id="surname" class="inputField" name="Surname">
 										</div>
 										
 										<div class="inputField-cont">
-											<input type="email" placeholder="Email" id="email" class="inputField">
+											<input type="email" placeholder="Email" id="email" class="inputField" name="Email">
 										</div>
 										
 										<div class="inputField-cont">
-											<input type="tel" placeholder="Cell Number" id="tel" class="inputField">
+											<input type="tel" placeholder="Cell Number" id="tel" class="inputField" name="Cell-Number">
 										</div>
 										
 										<div class="inputField-cont">
-											<input type="text" placeholder="Note title" id="note-title" class="inputField">
+											<input type="text" placeholder="Note title" id="note-title" class="inputField" name="Note-title">
 										</div>
 										
 										<div class="inputField-cont">
-											<input type="text" placeholder="Note Description" id="note-description" class="inputField">
+											<input type="text" placeholder="Note Description" id="note-description" class="inputField" name="Note-Description">
 										</div>
 										
 										<input type="submit" value="Search" class="sub-btn" id="sub-btn">
@@ -174,7 +174,7 @@
 							<a href="/add">Create Contact</a>
 						</div>
 						
-						<div class="filter-cont">
+						<!-- <div class="filter-cont">
 							<div class="filter" id="filter-dropdown">
 								<i class="fa fa-ellipsis-v"></i>
 							</div>
@@ -186,7 +186,7 @@
 									<li>Only Show emails</li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				

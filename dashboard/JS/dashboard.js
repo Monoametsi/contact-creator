@@ -161,7 +161,6 @@ function searchEnginSystem(){
 	//Looping through table rows
 	for(let i = 1; i < table.rows.length; i++){
 		//Message title
-		
 		let name = table.rows[i].cells[2].innerHTML.toLowerCase().trim();
 		//Message email
 		let surname = table.rows[i].cells[3].innerHTML.toLowerCase().trim();
@@ -208,6 +207,64 @@ searchEngine.onkeydown = (event) => {
 		searchEnginSystem();
 		slideDisplayer();
 	}
+}
+
+searchEngine.oninput = (event) => {
+	let searchEngineVal = searchEngine.value.toLowerCase();
+	
+	for(let i = 1; i < table.rows.length; i++){
+		if(searchEngineVal.trim() === "" || searchEngineVal.trim().length === 0){
+			if(table.rows[i] !== undefined){
+				table.rows[i].style.display = 'table-row';
+			}
+		}
+	}
+}
+
+const adv_search_btn = document.getElementById('sub-btn');
+const inputFields = document.getElementsByClassName('inputField');
+const tableText = document.getElementsByClassName('text');
+
+const adv_search = (evt) => {
+	evt.preventDefault();
+	let str = "";
+	
+	for(let j = 1; j < table.rows.length; j++){
+
+		const name = table.rows[j].cells[2].innerHTML.toLowerCase().trim();
+		const surName = table.rows[j].cells[3].innerHTML.toLowerCase().trim();
+		const email = table.rows[j].cells[5].innerHTML.toLowerCase().trim();
+		const cell_number = table.rows[j].cells[5].id.toLowerCase().trim();
+		const note_title = table.rows[j].cells[6].innerHTML.toLowerCase().trim();
+		const note_description = table.rows[j].cells[6].id.toLowerCase().trim();
+		
+		if(inputFields[0].value.toLowerCase().trim() === name && inputFields[1].value.toLowerCase().trim() === surName && inputFields[2].value.toLowerCase().trim() === email && inputFields[3].value.toLowerCase().trim() === cell_number && inputFields[4].value.toLowerCase().trim() === note_title && inputFields[5].value.toLowerCase().trim() === note_description){
+			table.rows[j].style.display = 'table-row';
+		}else{
+			table.rows[j].style.display = 'none';
+		}
+	}
+	
+	for(let i = 0; i < inputFields.length; i++){
+		let fieldValue = inputFields[i].value.toLowerCase().trim();
+		
+		if(fieldValue.length > 0){
+			str += `{${ inputFields[i].name }: "${ inputFields[i].value }" }\n`;
+		}
+	}
+	
+	searchEngine.value = str;
+}
+
+adv_search_btn.onclick = (event) =>{
+	adv_search(event);
+	const dropdownbtn = document.getElementById('filter-list-cont');
+	const adv_search_form = document.getElementById('adv-search-form');
+	const dropDownList = dropdownbtn.nextElementSibling;
+	
+	adv_search_form.reset();
+	dropdownbtn.style.display = 'none';
+	dropDownList.style.display = 'none';
 }
 
 let mainCheckBox = document.getElementById('main-checkbox');
