@@ -7,5 +7,5 @@
 	<li>Install Node.js(http://nodejs.org).</li><br>
 	<li>Run <code>npm install</code> to install app dependencies.</li><br>
 	<li>Run <code>npm start</code> to start the server.</li><br>
-	<li>Navigate to <a href="http://localhost:4500">http://localhost:4500</a> in your browser.</li>
+	<li>Navigate to <a href="http://localhost:8800">http://localhost:8800</a> in your browser.</li>
 </ol>
