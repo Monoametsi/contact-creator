@@ -178,6 +178,7 @@
 	border: 1px solid transparent;
 	user-select: none;
 	padding: 8px 12px;
+	white-space: nowrap;
 	transition: 0.3s
 }
 

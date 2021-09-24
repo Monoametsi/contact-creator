@@ -32,13 +32,7 @@
 		font-size: 1.4rem;
 	}
 }
-
-@media screen and (max-width: 900px){
-	.add-contact-btn a{
-		white-space: nowrap;
-	}
-}
-
+	
 @media screen and (max-width: 630px){
 	
 	.post-info-cont{
@@ -53,6 +47,43 @@
 
 	.slide-closer{
 		bottom: 94%;
+	}
+}
+
+@media screen and (max-width: 580px){
+	.search-engine-cont{
+		width: 100%;
+		margin-bottom: 1rem;
+	}
+	
+	.search-info-cont{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 500px){
+	.myMessage-header{
+		padding: 6px;
+		height: 2.1rem;
+	}
+	
+	.myMessage-header h1, .deleteAll-cont h1{
+		font-size: 13px;
+	}
+	
+	.contacts-table-cont{
+		width: 100%;
+	}
+	
+	body{
+		font-size: 13px;
+	}
+	
+	td .fa-trash, td .fa-pencil{
+		font-size: 1rem;
 	}
 }
 
@@ -76,18 +107,6 @@
 		min-width: 0;
 		white-space: normal;
 	}
-	
-	body{
-		font-size: 13px;
-	}
-	
-	td .fa-trash, td .fa-pencil{
-		font-size: 1rem;
-	}
-
-}
-
-@media screen and (max-width: 330px) {
 	
 	td{
 		display: flex;

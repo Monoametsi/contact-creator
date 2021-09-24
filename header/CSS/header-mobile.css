@@ -1,0 +1,15 @@
+@media screen and (max-width: 770px){
+	.logo-cont{
+		max-width: 50px;
+	}
+	
+	.dashboard-dropdown-btn-cont h4{
+		padding: 6px 8px;
+		font-size: 1rem;
+	}
+	
+	.title-cont h1{
+		font-size: 1.2rem;
+	}
+
+}
