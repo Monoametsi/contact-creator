@@ -637,31 +637,6 @@ td .fa-trash:hover + .content-title, .deleteAll-cont:hover .content-title{
 	color: #636d74;
 }
 
-.img-cont{
-	display: flex;
-    border-radius: 5px;
-    background-color: #f6f6f6;
-    margin: 5px;
-    justify-content: center;
-	width: 150px;
-    padding: 4px;
-    border: 1px solid #ddd;
-    max-width: 100%;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.img-cont:hover{
-	border: 1px solid #007cc2;
-}
-
-.img-cont > img{
-	border-radius: 5px;
-	width: 140px;
-    height: 140px;
-    max-width: 100%;
-}
-
 .post-details{
    display: flex;
    flex-direction: column;
