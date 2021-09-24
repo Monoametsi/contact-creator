@@ -1,0 +1,101 @@
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+	#dashboard-cont{
+		margin-bottom: 36rem;
+	}
+}
+
+@media screen and (max-width: 990px){
+	.search-engine-cont{
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 960px){
+	.deleteAll-cont{
+		display: none;
+	}
+	
+	td .sub-checkBox{
+		display: none;
+	}
+	
+	td:nth-child(3),td:nth-child(4),td:nth-child(5),td:nth-child(6),td:nth-child(7){
+		display: flex;
+		justify-content: center;
+	}
+	
+	th #main-checkbox, th{
+		display: none;
+	}
+	
+	td .fa-trash, td .fa-pencil{
+		font-size: 1.4rem;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.add-contact-btn a{
+		white-space: nowrap;
+	}
+}
+
+@media screen and (max-width: 630px){
+	
+	.post-info-cont{
+		margin-top: 6rem;
+	}
+	
+	.post-card{
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.slide-closer{
+		bottom: 94%;
+	}
+}
+
+@media screen and (max-width: 440px){
+	
+	.slide-closer{
+		bottom: 93%;
+	}
+
+	.post-info-cont{
+		padding: 1rem;
+	}
+	
+	.post-info{
+		margin: 4rem 0;
+		padding-right: 1rem;
+	}
+	
+	.post-date{
+		margin-bottom: 8px;
+		min-width: 0;
+		white-space: normal;
+	}
+	
+	body{
+		font-size: 13px;
+	}
+	
+	td .fa-trash, td .fa-pencil{
+		font-size: 1rem;
+	}
+
+}
+
+@media screen and (max-width: 330px) {
+	
+	td{
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.content-title-cont{
+		align-self: center;
+	}
+
+}
