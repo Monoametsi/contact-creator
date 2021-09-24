@@ -1,0 +1,32 @@
+@media screen and (max-width: 900px){
+	.intro-section-descript-cont p{
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 660px){
+	.intro-section-title-cont h1{
+		font-size: 2rem;
+	}
+}
+
+@media screen and (max-width: 590px){
+	.intro-section-descript-cont p{
+		width: 100%;
+		font-size: 1rem;
+	}
+	
+	.intro-section-title-cont h1{
+		line-height: 2.3rem;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 500px){
+	.intro-section-cont{
+		height: 100vh;
+		margin-top: 6rem;
+		margin-bottom: 6rem;
+	}
+}
